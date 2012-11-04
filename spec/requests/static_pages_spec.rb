@@ -9,6 +9,12 @@ describe "Static Pages" do
       visit '/static_pages/home'
       page.should have_content('Hello world')
     end
+    
+    it "should not have selector title 'Home'" do
+      
+      visit '/static_pages/home'
+      page.should have_selector('title', :text => 'Home')
+    end
   end
   
   describe "Help page" do
